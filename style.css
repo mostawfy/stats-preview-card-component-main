@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+
+:root {
+  --blue-main: hsl(233, 47%, 7%);
+  --blue-card: hsl(244, 38%, 16%);
+  --violet: hsl(277, 64%, 61%);
+  --white: hsl(0, 0%, 100%);
+  --white-p: hsla(0, 0%, 100%, 0.75);
+  --white-h: hsla(0, 0%, 100%, 0.6);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--blue-main);
+  color: var(--white);
+  height: 100vh;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  max-width: 1000px;
+  background-color: var(--blue-card);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.img {
+  /* background: url(images/image-header-desktop.jpg) center/cover; */
+  order: 2;
+  position: relative;
+  overflow: hidden;
+}
+
+.img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--violet);
+  z-index: 5;
+  opacity: 0.5;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 1rem 2rem;
+}
+
+.content h1 {
+  font-size: 35px;
+  padding: 1rem 0;
+}
+
+.content h1 span {
+  color: var(--violet);
+}
+.content p {
+  color: var(--white-p);
+  font-size: 15px;
+  line-height: 1.7;
+  padding-right: 3rem;
+}
+.status {
+  padding-right: 4rem;
+}
+
+.status ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status div {
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.status li span {
+  color: var(--white-h);
+  text-transform: uppercase;
+
+  font-family: "Lexend Deca", sans-serif;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px 400px;
+    max-width: 300px;
+    width: 90%;
+    text-align: center;
+    min-height: 600px;
+    grid-gap: 0;
+  }
+  .img {
+    order: -1;
+  }
+
+  .content h1 {
+    font-size: 22px;
+    padding: 0.5rem;
+  }
+  .content p {
+    padding: 0;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 0.7rem;
+  }
+
+  .status {
+    padding: 0;
+  }
+
+  .status ul {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .status div {
+    font-size: 20px;
+    margin: 0;
+  }
+  .status span {
+    font-size: 12px;
+  }
+  .status li {
+    padding: 0.7rem;
+  }
+}
